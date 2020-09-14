@@ -21,7 +21,7 @@ const Sidebar = () => {
       <SidebarRow Icon={PeopleIcon} title='Messenger' />
       <SidebarRow Icon={StorefrontIcon} title='Marketplace' />
       <SidebarRow Icon={VideoLibraryIcon} title='Videos' />
-      <SidebarRow Icon={ExpandMoreIcon} title='Marketpace' />
+      <SidebarRow Icon={ExpandMoreIcon} title='See More' />
     </div>
   );
 };
