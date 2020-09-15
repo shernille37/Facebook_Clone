@@ -7,12 +7,14 @@ import PeopleIcon from '@material-ui/icons/People';
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
-import img from '../../assets/images/Jersey.jpg';
+import { useStateValue } from '../../context/StateProvider';
 
 const Sidebar = () => {
+  const [{ user }] = useStateValue();
+
   return (
     <div className='sidebar'>
-      <SidebarRow src={img} title='Shernille Licud' />
+      <SidebarRow src={user.photoURL} title={user.displayName} />
       <SidebarRow
         Icon={LocalHospitalIcon}
         title='COVID-19 Information Center'

@@ -7,13 +7,15 @@ import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import { Avatar, IconButton } from '@material-ui/core';
-import img from '../../assets/images/Jersey.jpg';
 import AddIcon from '@material-ui/icons/Add';
 import ForumIcon from '@material-ui/icons/Forum';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { useStateValue } from '../../context/StateProvider';
 
 const Header = () => {
+  const [{ user }] = useStateValue();
+
   return (
     <div className='header'>
       <div className='header__left'>
@@ -49,8 +51,8 @@ const Header = () => {
 
       <div className='header__right'>
         <div className='header__info'>
-          <Avatar src={img} />
-          <h4>Shernille Licud</h4>
+          <Avatar src={user.photoURL} />
+          <h4>{user.displayName}</h4>
         </div>
 
         <IconButton>
